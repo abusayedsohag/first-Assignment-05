@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
     <!-- Custom Tailwind -->
     <script>
         tailwind.config = {
@@ -16,21 +21,24 @@
               colors: {
                 clifford: '#da373d',
                 btnColor: '#B4F461',
+                stroke: '#111111',
+              },
+              fontFamily: {
+                bodyText: ['Lexend', 'sans-serif']
               }
             }
           }
         }
     </script>
     
-
 </head>
-<body> 
+<body class="font-bodyText">
     <header class="sticky top-0 z-50">
         <!-- Nav Bar -->
         <nav class="h-24 bg-gray-200 bg-opacity-50 backdrop-blur">
             <div class="navbar w-4/5 mx-auto">
                 <div class="navbar-start">
-                    <a class="btn bg-lime-300">Blog</a>
+                    <a class="btn bg-btnColor">Blog</a>
                 </div>
                 <div class="navbar-center">
                     <img src="./assets/logo.png" alt="">
@@ -47,15 +55,16 @@
     <main class="w-4/5 mx-auto px-4 py-8">
         <!-- Action Button -->
         <div class="flex justify-center gap-3">
-            <button class="btn bg-lime-300">Donation</button>
-            <button class="btn bg-lime-300">History</button>
+            <button id="btnDonate" class="btn btn-outline bg-btnColor">Donation</button>
+            <button id="btnHistory" class="btn btn-outline">History</button>
         </div>
 
+        <!-- Donation Page Start -->
         <!-- Donation Cards -->
-        <div class="grid grid-cols-1 gap-6 mt-6">
+        <div id="pageDonate" class="grid grid-cols-1 gap-6 mt-6">
 
             <!-- Card 1 -->
-            <div class="card card-side bg-white shadow-lg gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
+            <div class="card card-side bg-white border-2 border-stroke border-opacity-10 gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img src="./assets/noakhali.png" alt="Flood Noakhali" class="w-full"/>
                 </div>
@@ -69,13 +78,13 @@
                     <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference.</p>
                     <div class="grid grid-cols-1 mt-4 gap-4">
                         <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
-                        <button class="btn bg-lime-300">Donate Now</button>
+                        <button class="btn bg-btnColor">Donate Now</button>
                     </div>
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="card card-side bg-white shadow-lg gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
+            <div class="card card-side bg-white border-2 border-stroke border-opacity-10 gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img src="./assets/feni.png" alt="Flood Noakhali" class="w-full"/>
                 </div>
@@ -89,13 +98,13 @@
                     <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference.</p>
                     <div class="grid grid-cols-1 mt-4 gap-4">
                         <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
-                        <button class="btn bg-lime-300">Donate Now</button>
+                        <button class="btn bg-btnColor">Donate Now</button>
                     </div>
                 </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="card card-side bg-white shadow-lg gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
+            <div class="card card-side bg-white border-2 border-stroke border-opacity-10 gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img src="./assets/quota-protest.png" alt="Flood Noakhali" class="w-full"/>
                 </div>
@@ -109,13 +118,13 @@
                     <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference.</p>
                     <div class="grid grid-cols-1 mt-4 gap-4">
                         <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
-                        <button class="btn bg-lime-300">Donate Now</button>
+                        <button class="btn bg-btnColor">Donate Now</button>
                     </div>
                 </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="card card-side bg-white shadow-lg gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
+            <div class="card card-side bg-white border-2 border-stroke border-opacity-10 gap-8 p-8 grid grid-cols-1 lg:grid-cols-2">
                 <div>
                     <img src="./assets/noakhali.png" alt="Flood Noakhali" class="w-full"/>
                 </div>
@@ -129,12 +138,21 @@
                     <p>The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will help provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a difference.</p>
                     <div class="grid grid-cols-1 mt-4 gap-4">
                         <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
-                        <button class="btn bg-lime-300">Donate Now</button>
+                        <button class="btn bg-btnColor">Donate Now</button>
                     </div>
                 </div>
             </div>
             <!-- Card End -->
         </div>
+        <!-- Donation Page End -->
+
+        <!-- History Page Start -->
+         <div id="pageHistory" class="flex justify-center hidden">
+            <h1>Show Here Just History</h1>
+         </div>
+        <!-- History Page End -->
     </main>
+    <!-- JavaScript -->
+     <script src="./JS/home.js"></script>
 </body>
 </html>
