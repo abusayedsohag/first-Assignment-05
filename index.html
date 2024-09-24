@@ -30,6 +30,9 @@
           }
         }
     </script>
+
+    <!-- Icon CDN -->
+    <script src="https://kit.fontawesome.com/0b7094b591.js" crossorigin="anonymous"></script>
     
 </head>
 <body class="font-bodyText">
@@ -162,6 +165,22 @@
                 <form method="dialog">
                     <!-- if there is a button in form, it will close the modal -->
                     <button class="btn">Close Confirmation</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Invalid Modal -->
+    <dialog id="my_modal_4" class="modal modal-middle">
+        <div class="modal-box flex flex-col items-center">
+            <h3 class="text-5xl font-bold mb-4">Invalid Input!</h3>
+            <p class="text-red-600"><span id="invalidText"></span> <i class="fa-regular fa-circle-xmark"></i></p>
+            <p id="recomment"></p>
+            <h1 class="font-bold text-xl">Input a Valid Amount</h1>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Try Again</button>
                 </form>
             </div>
         </div>

@@ -6,9 +6,43 @@ function workDonation(donate_btn, input_Amount, donate_Amount, donate_Address, m
         const mainAmount = textValue(main_Balance);
         const emptyInput = document.getElementById(input_Amount).value.trim();
     
-        if( emptyInput === '' || isNaN(inputAmount) || mainAmount < inputAmount || 0 > inputAmount) {
-            alert('Invalid Amount');
+        if( emptyInput === '') {
+
+            onclick = my_modal_4.showModal();
+            // Print the invalid data in Modal
+            const valueOfinput = document.getElementById(input_Amount).value;
+            document.getElementById('invalidText').innerText = valueOfinput;
+
+            document.getElementById('recomment').innerText = 'Input is Empty';
         }
+        else if( isNaN(inputAmount)) {
+
+            onclick = my_modal_4.showModal();
+            // Print the invalid data in Modal
+            const valueOfinput = document.getElementById(input_Amount).value;
+            document.getElementById('invalidText').innerText = valueOfinput;
+
+            document.getElementById('recomment').innerText = 'Input is Not a Number';
+        }
+        else if( mainAmount < inputAmount) {
+
+            onclick = my_modal_4.showModal();
+            // Print the invalid data in Modal
+            const valueOfinput = document.getElementById(input_Amount).value;
+            document.getElementById('invalidText').innerText = valueOfinput;
+
+            document.getElementById('recomment').innerText = 'Your Main Balance is Low';
+        }
+        else if( 0 > inputAmount) {
+
+            onclick = my_modal_4.showModal();
+            // Print the invalid data in Modal
+            const valueOfinput = document.getElementById(input_Amount).value;
+            document.getElementById('invalidText').innerText = valueOfinput;
+
+            document.getElementById('recomment').innerText = 'Input is Nagative';
+        }
+
         else {
             // remove Balance from main balance
             const currentMainBalance = mainAmount - inputAmount;
@@ -26,10 +60,7 @@ function workDonation(donate_btn, input_Amount, donate_Amount, donate_Address, m
                 </div>`;
             historySection.appendChild(add);
 
-            /* // Show Modal
-            const modal = document.getElementById('my_modal_5');
-            modal.showModal(); */
-
+            // Show Modal
             onclick = my_modal_5.showModal();
             // Change Modal P tag
             const donatText = document.getElementById(donate_Address).innerText;
