@@ -38,12 +38,12 @@
 <body class="font-bodyText">
     <header class="sticky top-0 z-50 backdrop-blur">
         <!-- Nav Bar -->
-        <nav class="h-24 bg-gray-200 bg-opacity-50">
+        <nav class="bg-gray-200 bg-opacity-50 lg:h-24">
             <div class="navbar w-11/12 lg:w-4/5 mx-auto">
                 <div class="navbar-start">
                     <a id="blogPage" class="btn bg-btnColor">Blog</a>
                 </div>
-                <div class="navbar-center hidden lg:flex">
+                <div class="navbar-center hidden md:flex lg:flex">
                     <img src="./assets/logo.png" alt="">
                     <a class="btn btn-ghost text-xl font-semibold">Donate Bangladesh</a>
                 </div>
@@ -54,16 +54,16 @@
             </div>
         </nav>
         <!-- Action Button -->
-        <div class="flex justify-center gap-3 pt-7">
+        <div class="flex justify-center gap-3 py-3 lg:py-6">
             <button id="btnDonate" class="btn btn-outline bg-btnColor">Donation</button>
             <button id="btnHistory" class="btn btn-outline">History</button>
         </div>
     </header>
         <!-- Main Content -->
-    <main class="w-11/12 lg:w-4/5 mx-auto px-4 py-8">
+    <main class="w-11/12 lg:w-4/5 mx-auto px-4">
         
         <!-- Donation Page Start -->
-        <div id="pageDonate" class="grid grid-cols-1 gap-6 mt-6">
+        <div id="pageDonate" class="grid grid-cols-1 gap-6">
 
             <!-- Card 1 -->
             <div class="card card-side bg-white border-2 border-stroke border-opacity-10 gap-8 p-5 lg:p-8 grid grid-cols-1 lg:grid-cols-2">
@@ -157,10 +157,10 @@
     <!-- Success Modal -->
     <dialog id="my_modal_5" class="modal modal-middle">
         <div class="modal-box flex flex-col items-center">
-            <h3 class="text-5xl font-bold mb-4">Congrates!</h3>
-            <img src="./assets/coin.png" alt="Coin" class="mb-9">
-            <p id="modalText" class="mb-2"></p>
-            <h1 class="font-bold text-xl">Successfully</h1>
+            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Congrates!</h3>
+            <img src="./assets/coin.png" alt="Coin" class="mb-5 lg:mb-9">
+            <p id="modalText" class="mb-2 text-center text-xs md:text-sm lg:text-base"></p>
+            <h1 class="font-bold text-lg lg:text-xl">Successfully</h1>
             <div class="modal-action">
                 <form method="dialog">
                     <!-- if there is a button in form, it will close the modal -->
@@ -173,10 +173,9 @@
     <!-- Invalid Modal -->
     <dialog id="my_modal_4" class="modal modal-middle">
         <div class="modal-box flex flex-col items-center">
-            <h3 class="text-5xl font-bold mb-4">Invalid Input!</h3>
-            <p class="text-red-600"><span id="invalidText"></span> <i class="fa-regular fa-circle-xmark"></i></p>
-            <p id="recomment"></p>
-            <h1 class="font-bold text-xl">Input a Valid Amount</h1>
+            <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Invalid Input!</h3>
+            <p class="text-red-600 text-xs md:text-sm lg:text-base"><span id="invalidText"></span> <i class="fa-regular fa-circle-xmark"></i></p>
+            <p id="recomment" class="text-xs md:text-sm lg:text-base"></p>
             <div class="modal-action">
                 <form method="dialog">
                     <!-- if there is a button in form, it will close the modal -->
